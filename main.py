@@ -26,12 +26,11 @@ def lottoziehung(zz):
             #numbs.append(x)
             numbs[index], numbs[n] = numbs[n], numbs[index]
 
-            stats(x, DictCnts)
             n = n-1
         else:
             break
     print(DictCnts)
-    return numbs[44]
+    return numbs[39:45]
 
 def statsZiehungen(zz):
     DictCnts = {}
@@ -39,14 +38,13 @@ def statsZiehungen(zz):
         DictCnts[i] = 0
 
     for x in range(zz):
-        y = lottoziehung(1)
-        DictCnts[y] += 1
+        zahlen = lottoziehung(6)
+
+        for y in zahlen:
+            DictCnts[y] += 1
 
     print(DictCnts)
 
 
-def stats(zahl, DictCnts):
-    DictCnts[zahl] += 1
+statsZiehungen(5)
 
-
-statsZiehungen(1000)
